@@ -1,0 +1,19 @@
+<header>
+    <section>
+        <nav>
+            <div>
+                <ul>
+                    <!--index-->
+                    <li></li>
+                    <!--trabalhador-->
+                    <li></li>
+                    <!--empregador-->
+                    <li></li>
+                    <!--login/logout-->
+                    <li></li>
+
+                </ul>
+            </div>
+        </nav>
+    </section>
+</header>
