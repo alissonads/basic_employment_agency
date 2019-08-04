@@ -1,0 +1,36 @@
+pag index :
+- click em qualquer item do menu ->
+    * requisição => redirecionamento (typeRequest);
+    * para qual página => código da página (codePage);
+    * página atual => código da view em que está para mudar de view (codeView);
+
+pag Register:
+- click em qualquer item do menu ->
+    * requisição => redirecionamento (typeRequest);
+    * para qual página => código da página (codePage);
+    * página atual => código da view em que está para mudar de view (codeView);
+
+- click em botões de envio de post ->
+    * requisição => cadastro (typeRequest);
+    * para qual página => código da página (codePage);
+    * página atual => código da view em que está para mudar de view (codeView);
+
+pag Update:
+- click em qualquer item do menu ->
+    * requisição => redirecionamento (typeRequest);
+    * para qual página => código da página (codePage);
+    * página atual => código da view em que está para mudar de view (codeView);
+
+- click em botões de atualização (submit post) ->
+    * requisição => update (typeRequest);
+    * para qual página => código da página (codePage);
+    * página atual => código da view em que está para mudar de view (codeView);
+
+
+***OBS:
+- typeRequest -> importante para designar o modelo ideal para tratar os dados;
+- codePage -> código da página que o cliente será redirecionado (requisição do cliente);
+- codeView -> código da view atual. Importante para o gerenciador de view saber qual será a proxima view.
+
+nas resposta da requisição precisa ter o código da página para criar a view
+ex: Register

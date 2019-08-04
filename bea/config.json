@@ -1,0 +1,9 @@
+{
+    "version": "1.0.0",
+	"db": {
+	    "host": "localhost",
+		"username": "root",
+		"password": "",
+		"name": "basic_employment_agency"
+	}
+}
