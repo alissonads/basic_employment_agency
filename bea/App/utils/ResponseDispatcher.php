@@ -33,9 +33,7 @@
                 header($key . ': ' . $value);
             }
             
-            $url = 'http://' . HOST . 
-                   rtrim(dirname(THIS_APP), '/\\') .
-                   !empty($receiver)? "/$receiver" : '';
+            $url = ROOT . !empty($receiver)? "/$receiver" : '';
             
             if (key_exists('Method') && $headerAtt['Method'] == 'POST') {
                 setSessionResponse($this->response);
