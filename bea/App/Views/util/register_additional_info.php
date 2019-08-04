@@ -5,7 +5,7 @@
                 <h2><span>Informações Adicionais</span></h2>
             </div>
 
-            <form action="<?php echo $_SERVER['PHP_SELF'] . '/' . 
+            <form action="<?php echo ROOT . '/'. 
                                      BEA_REGISTER . '/' . 
                                      WORKER_USER . '/' .
                                      WORKER_EXPERIENCE; ?>" 

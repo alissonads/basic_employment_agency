@@ -22,7 +22,12 @@
         protected abstract function drawPage();
 
         public function draw() {
+            require_once 'App/Views/templates/header.php';
+            require_once 'App/Views/templates/nav.php';
+
             $this->drawPage();
+
+            require_once 'App/Views/templates/footer.php';
         }
     }
 

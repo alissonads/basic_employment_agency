@@ -5,7 +5,7 @@
                 <h2><span><?php echo $this->getTitle(); ?></span></h2>
             </div>
 
-            <form action="<?php echo BEA_REGISTER . '/' . 
+            <form action="<?php echo ROOT . '/'. BEA_REGISTER . '/' . 
                                      WORKER_USER . '/' .
                                      WORKER_ADD_INFO; ?>" 
               method="post" onsubmit="return validateUserRegister(this)">

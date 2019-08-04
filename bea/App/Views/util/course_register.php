@@ -101,7 +101,7 @@
                 </div>
             </div>
 
-            <form action="<?php echo $_SERVER['PHP_SELF'] . '/' . 
+            <form action="<?php echo ROOT . '/'.
                                      BEA_PROFILE . '/' . 
                                      WORKER_USER; ?>" 
                   method="post" onsubmit="return validateCourseRegister(this)">

@@ -41,6 +41,8 @@
     define('HOST', $_SERVER['HTTP_HOST']);
     define('THIS_APP', $_SERVER['PHP_SELF']);
 
+    define('ROOT', 'http://' . HOST . rtrim(dirname(THIS_APP), '/\\'));
+    
     function setAppConfig($appConfig) {
         $_SESSION['appConfig'] = $appConfig;
         removeAppConfig();

@@ -7,7 +7,7 @@
                 <ul class="links mr-auto">
                     <!--index-->
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="<?php echo ROOT; ?>">
                             <p>Home</p>
                         </a>
                     </li>
@@ -24,7 +24,7 @@
                             <a class="dropdown-item" href="#">
                                 <p>Perfil</p>
                             </a>
-                            <a class="dropdown-item" href="<?php echo BEA_REGISTER . '/' . 
+                            <a class="dropdown-item" href="<?php echo ROOT . '/'. BEA_REGISTER . '/' . 
                                                                       WORKER_USER . '/' .
                                                                       LOAGIN_USER; ?>">
                                 <p>Cadastrar Currículo</p>
