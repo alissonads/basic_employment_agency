@@ -1,19 +1,20 @@
+
 function getElement(type, name) {
     switch (type) {
         case "id":
-            return document.getElementById(name);
-            break;
+        return document.getElementById(name);
+        break;
         case "class":
-            return document.getElementsByClassName(name);
-            break;
+        return document.getElementsByClassName(name);
+        break;
         case "name":
-            return document.getElementsByName(name);
-            break;
+        return document.getElementsByName(name);
+        break;
         case "tag":
-            return document.getElementsByTagName(name);
-            break;
+        return document.getElementsByTagName(name);
+        break;
     }
-
+    
     return null;
 }
 
@@ -921,3 +922,12 @@ function dropdownMenu(elem) {
     else
         menu.style.setProperty('display', 'none');
 }
+
+function navInfo(link, url) {
+    link.href = "#";
+    form = getElement('id', 'nav');
+    form.action = url;
+    form.submit();
+}
+
+

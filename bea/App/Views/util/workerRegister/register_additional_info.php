@@ -92,13 +92,13 @@
                                 <div class="flex-row">
                                     <div class="radio">
                                         <input type="radio" class="check-radio" name="observation" id="message"
-                                         value="message" onchange="validateRadio(this, 'observation-error')" />
+                                         value="3" onchange="validateRadio(this, 'observation-error')" />
                                         <label for="message">Recado</label>
                                     </div>
     
                                     <div class="radio">
                                         <input type="radio" class="check-radio" name="observation" id="own"
-                                         value="own" onchange="validateRadio(this, 'observation-error')" />
+                                         value="2" onchange="validateRadio(this, 'observation-error')" />
                                         <label for="own">Próprio</label>
                                     </div>
                                 </div>
@@ -172,7 +172,7 @@
                     <div class="col-md-1">
                         <div class="col-1">
                             <label for="summary">Resumo</label>
-                            <textarea class="elem width-90" style="font-size:large;" name="description" id="description" cols="30" rows="10"
+                            <textarea class="elem width-90" style="font-size:large;" name="summary" id="summary" cols="30" rows="10"
                             placeholder="Descreva um resumo sobre você" ></textarea>
                         </div>
                     </div>
@@ -196,7 +196,7 @@
 </div>
 
 <?php 
-    require_once 'App/view/templates/info_deficiency.php';
-    require_once 'App/view/templates/alert.php';
-    require_once 'App/view/templates/loader.php'; 
+    require_once 'App/Views/templates/info_deficiency.php';
+    require_once 'App/Views/templates/alert.php';
+    require_once 'App/Views/templates/loader.php'; 
 ?>

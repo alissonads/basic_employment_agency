@@ -36,11 +36,10 @@
                 if (!empty($response->getPageAddtInfo()) &&
                     $response->getPageAddtInfo() == REDIRECT) {
 
-                    $page = $response->getPage();
-                    $page->setAddtView('');
-                    setCurrentPage($page);
+                    $response->getPage()->setAddtView('');
                     $responseDispatcher = $response->createResponseDispatcher();
                     $responseDispatcher->setContentType('text/html');
+                    $responseDispatcher->addHeader('Method', 'POST');
                     /*envia a resposta para a index, ex:
                         http://localhost/param1/param2/param3
                     */
@@ -50,8 +49,6 @@
 
             $this->notify();
         }
-
-        private function getReceiver($type) {/*...*/}
 
         public function registerObserver(Observer $observer) {
             $this->observer = $observer;

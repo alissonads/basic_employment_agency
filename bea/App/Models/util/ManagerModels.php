@@ -1,5 +1,7 @@
 <?php
     require_once 'App/Models/util/factory/WorkerModelsFactory.php';
+    require_once 'App/Models/ProfileModel.php';
+    require_once 'App/Models/LoginLogoutModel.php';
     require_once 'App/utils/GlobalDefs.php';
     require_once 'App/utils/Page.php';
 
@@ -17,26 +19,28 @@
         }
 
         private function createModel(Page $currentPage = null) {
-            if (!$currentPage) 
+            if (!$currentPage) {
                 return $this->redirectLinkModel();
+            }
 
             $currentNamePage = $currentPage->getName();
             $currentViewInfo = $currentPage->getInfoView();
 
             switch ($currentNamePage) {
-                case BSA_DELETE:
+                case BEA_DELETE:
                     break;
-                case BSA_HOME:
+                case BEA_HOME:
                     return $this->redirectLinkModel($currentViewInfo);
-                case BSA_LOGIN:
-                    break;
-                case BSA_PROFILE:
-                    break;
-                case BSA_REGISTER:
+                case BEA_LOGIN:
+                case BEA_LOGOUT:
+                    return new LoginLogoutModel();
+                case BEA_PROFILE:
+                    return new ProfileModel();
+                case BEA_REGISTER:
                     return $this->registerModel($currentViewInfo);
-                case BSA_RESULTS:
+                case BEA_RESULTS:
                     break;
-                case BSA_UPDATE:
+                case BEA_UPDATE:
                     break;
                 default:
                 /*lançar a exceção*/
@@ -60,7 +64,7 @@
             if (empty($currentViewInfow))
                 return new RedirectLinkModel();
                 
-            switch ($currentViewInfo) {
+            switch ($currentViewInfow) {
                 case HOME:
                     return new RedirectLinkModel();
                 default:

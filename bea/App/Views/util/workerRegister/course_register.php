@@ -120,6 +120,6 @@
 </div>
 
 <?php 
-    require_once 'App/view/templates/alert.php';
-    require_once 'App/view/templates/loader.php'; 
+    require_once 'App/Views/templates/alert.php';
+    require_once 'App/Views/templates/loader.php'; 
 ?>

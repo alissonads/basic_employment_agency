@@ -20,8 +20,16 @@
         }
 
         public function apply() {
-            $this->response = new Response(null,
+            $this->response = new Response($this->request->getDataList(),
                                            $this->request->getNextPage());
+
+            switch ($this->response->getPage()->getName()) {
+                case BEA_LOGOUT:
+                case BEA_PROFILE:
+                    $this->response->getPage()->setAddtView(REDIRECT);
+                    setCurrentPage($this->response->getPage());
+                    break;
+            }
         }
     }
 ?>

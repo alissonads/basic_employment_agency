@@ -4,6 +4,7 @@
     define('BEA_DELETE',   'Deletar');
     define('BEA_HOME',     'Home');
     define('BEA_LOGIN',    'Login');
+    define('BEA_LOGOUT',   'Logout');
     define('BEA_PROFILE',  'Perfil');
     define('BEA_REGISTER', 'Cadastro');
     define('BEA_RESULTS',  'Resultados');
@@ -18,13 +19,13 @@
     define('WORKER_EXPERIENCE', 'Experiências');
 
     //define('WORKER_USER', 'User');
-    define('EMPLOYER_USER', 'Empregador');
+    define('EMPLOYER_USER', 'Admin');
 
     define('COLLABORATOR_USER', 'Colaborador');
     
     define('WORK', 'Vaga');
 
-    define('LOAGIN_USER', 'Dados de Acesso');
+    define('LOGIN_USER', 'Dados de Acesso');
 
     define('END', 'Concluir');
 
@@ -45,7 +46,8 @@
     
     function setAppConfig($appConfig) {
         $_SESSION['appConfig'] = $appConfig;
-        removeAppConfig();
+        if (!$_SESSION['appConfig'])
+            removeAppConfig();
     }
 
     function getAppConfig() {
@@ -53,7 +55,7 @@
     }
 
     function removeItemSession(string $key) {
-        if (isset($_SESSION[$key]) || !$_SESSION[$key])
+        if (isset($_SESSION[$key]))
             unset($_SESSION[$key]);
     }
 
@@ -63,7 +65,8 @@
 
     function setCurrentPage($currentPage) {
         $_SESSION['currentPage'] = $currentPage;
-        removeCurrentPage();
+        if (!$_SESSION['currentPage'])
+            removeCurrentPage();
     }
 
     function getCurrentPage() {
@@ -74,22 +77,41 @@
         removeItemSession('currentPage');
     }
 
-    function setUserId($userId) {
-        $_SESSION['user_id'] = $userId;
-        removeUserId();
+    /**********************************************************************/
+    function setUser($user) {
+        $_SESSION['user'] = $user;
+        if (!$_SESSION['user'])
+            removeUser();
+    }
+
+    function getUser() {
+        return $_SESSION['user'] ?? null;
+    }
+
+    function removeUser() {
+        removeItemSession('user');
     }
 
     function getUserId() {
-        return $_SESSION['user_id'] ?? '';
+        return is_object(getUser()) ? getUser()->getId() : '';
     }
 
-    function removeUserId() {
-        removeItemSession('user_id');
+    function getUserName() {
+        return is_object(getUser()) ? getUser()->getUserName() : '';
     }
 
+    function getAccessLevel() {
+        return is_object(getUser()) ? getUser()->getAccessLevel() : '';
+    }
+
+    function getName() {
+        return is_object(getUser()) ? getUser()->getName() : '';
+    }
+    /**********************************************************************/
     function setSessionResponse($response) {
         $_SESSION['response'] = $response;
-        removeSessionResponse();
+        if (!$_SESSION['response'])
+            removeSessionResponse();
     }
 
     function getSessionResponse() {
@@ -98,5 +120,16 @@
 
     function removeSessionResponse() {
         removeItemSession('response');
+    }
+
+    function convertDateDB(string $date) {
+        if (empty($date))
+            return '';
+        $d = explode('/', $date);
+        return  $d[2] . '-' . $d[1] . '-' . $d[0];
+    }
+
+    function convertFormatMoneyDB(string $value) {
+        return str_replace(',', '.', str_replace('.', '', $value));
     }
 ?>

@@ -255,7 +255,7 @@ ul, ol, dl {
     display: table;
 }
 
-.box, .box-op-register {
+.box, .box-op-register, .box-perfil {
     margin-top: 1rem;
     flex: 1 1 auto;
     display: flex;
@@ -265,9 +265,14 @@ ul, ol, dl {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.box, .box-op-register {
+.box, .box-op-register, .box-perfil {
     background-clip: border-box;
     padding: 2rem 3rem 1.25rem 0.8rem;
+}
+
+.box-perfil {
+    display: block;
+    flex-flow: row wrap;
 }
 
 .panel {
@@ -485,7 +490,7 @@ button {
     border: 0.04rem solid rgba(0, 0, 0, 0.12);
 }
 
-h2, .elem {
+h1, h2, .elem {
     color: #333;
 }
 
@@ -705,6 +710,52 @@ h2, .elem {
     background-color: #F00;
 }
 
+.box-perfil .left-col, .box-perfil .right-col {
+    display: block;
+}
+
+.left-col, .box-perfil .right-col {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.left-col, .right-col {
+    min-height: 50px;
+    word-wrap: break-word;
+}
+
+.left-col:first-child {
+    margin-left: 0 !important;
+}
+
+.right-col {
+    float: right;
+}
+
+.box-perfil .right-col {
+    margin-left: 15px !important;
+}
+
+.fixed {
+    position: fixed !important;
+    margin: auto;
+    transform: translateZ(0);
+}
+
+#left-nav {
+    width: inherit;
+}
+
+#left-nav .ul-top {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.li-top {
+    margin-top: 10px;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -718,15 +769,21 @@ h2, .elem {
     .container {
         width: 1200px;
     }
+    /*.box-perfil {
+        width: 1000px !important;
+    }*/
 }
 
 @media (min-width:992px) {
     .container {
         width: 970px !important;
     }
-    .box-op-register {
+    .box-op-register, .box-perfil {
         width: 900px !important;
     }
+    /*.box-perfil {
+        width: 900px;
+    }*/
     .nav-bar-exp-lg {
         flex-flow: row nowrap;
         justify-content: flex-start;
@@ -766,7 +823,7 @@ h2, .elem {
     .container {
         width: 750px;
     }
-    .box-op-register {
+    .box-op-register, .box-perfil {
         width: 700px;
     }
     .width-90 {
@@ -780,12 +837,14 @@ h2, .elem {
 @media (min-width:520px) {
     .box, .box-op-register {
         margin-top: 5rem;
+    }
+    .box, .box-op-register, .box-perfil {
         padding: 2rem 2rem 1.25rem 2rem;
     }
     .box-op-register {
         width: 500px;
     }
-    .line {
+    .line, .box-perfil {
         display: flex;
     }
     .btn-option {

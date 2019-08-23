@@ -4,6 +4,8 @@
     require_once 'App/utils/GlobalDefs.php';
     require_once 'App/utils/Response.php';
     require_once 'HomeView.php';
+    require_once 'LoginView.php';
+    require_once 'ProfileView.php';
     require_once 'util/factory/WorkerViewFactory.php';
 
     class ManagerView implements ViewInterface, Observer {
@@ -57,8 +59,10 @@
                     $this->view = new HomeView();
                     break;
                 case BEA_LOGIN:
-                    break;
+                $this->view = new LoginView();
+                break;
                 case BEA_PROFILE:
+                    $this->view = new ProfileView();
                     break;
                 case BEA_REGISTER:
                     $this->register($view);

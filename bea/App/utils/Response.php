@@ -12,9 +12,9 @@
             $this->page = $page;
         }
 
-        public function getData() { return $this->data; }
+        public function getDataList() { return $this->data; }
 
-        public function getValue(string $id) { return $this->data[$id]; }
+        public function getValue(string $id) { return $this->data[$id]??''; }
 
         public function getPage() { return $this->page; }
 

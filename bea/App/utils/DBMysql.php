@@ -8,14 +8,13 @@
             $username = (!empty($config->username))? $config->username : '';
             $password = (!empty($config->password))? $config->password : '';
             
-            try {
-                $this->con = new mysqli($host, $username, $password, $name); 
+            $this->con = new mysqli($host, $username, $password, $name); 
                                     //or die('Could not connect to the database server ' . 
                                             //mysqli_connect_error());
-            } catch (mysqli_sql_exception $e) {
+            if (mysqli_connect_errno()) {
                 throw new Exception('Could not connect to the database server ' . '<br/>'.
                                     'Errorno: ' . $this->con->connect_errno . '<br/>'.
-                                    'Error: ' . $this->con->connect_error, 500);
+                                    'Error: ' . mysqli_connect_error(), 500);
             }
         }
 
@@ -32,17 +31,15 @@
         }
 
         public function query($query) {
-            try {
-                $result = $this->con->query($query);
-                return $result;
-            } catch (mysqli_sql_exception $e) {
+            $result = $this->con->query($query);
+
+            if (!$result) {
                 throw new Exception('Error querying database.' . '<br/>'.
                                     'Errorno: ' . $this->con->errno . '<br/>'.
                                     'Error: ' . $this->con->error, 500);
             }
 
-            /*return $this->con->query($query)
-                                or die('Error querying database.');*/
+            return $result;
         }
     }
 ?>
