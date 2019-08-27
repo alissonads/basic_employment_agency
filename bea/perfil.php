@@ -25,22 +25,22 @@
                             <div id="left-nav">
                                 <ul class="ul-top">
                                     <li class="li-top">
-                                        <a href="">Vagas Por Perfil</a>
+                                        <a class="nav-link" href=""><p>Vagas Por Perfil</p></a>
                                     </li>
                                     <li class="li-top">
-                                        <a href="">Minhas Vagas</a>
+                                        <a class="nav-link" href=""><p>Minhas Vagas</p></a>
                                     </li>
                                     <li class="li-top">
-                                        <a href="">Meu Currículo</a>
+                                        <a class="nav-link" href=""><p>Meu Currículo</p></a>
                                     </li>
                                     <li class="li-top">
-                                        <a href="">Atualizar Perfil</a>
+                                        <a class="nav-link" href=""><p>Atualizar Perfil</p></a>
                                     </li>
                                     <li class="li-top">
-                                        <a href="">Deletar Perfil</a>
+                                        <a class="nav-link" href=""><p>Deletar Perfil</p></a>
                                     </li>
                                     <li class="li-top">
-                                        <a href="">Sair</a>
+                                        <a class="nav-link" href=""><p>Sair</p></a>
                                     </li>
                                 </ul>
                             </div>

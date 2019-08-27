@@ -16,12 +16,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#"
                          role="button" data-toggle="dropdown"
-                         aria-haspopup="true" aria-expanded="false"
-                         onclick="dropdownMenu(this);">
+                         aria-haspopup="true" aria-expanded="false">
                             <p>Cadastrar</p>
                         </a>
 
-                        <div class="dropdown-menu" style="display:none;">
+                        <div class="dropdown-menu">
                             <?php if (!is_object(getUser())) { ?>
                                 <a class="dropdown-item" href="<?php echo ROOT . '/'. BEA_REGISTER . '/' . 
                                                                         WORKER_USER . '/' .
@@ -44,12 +43,11 @@
                     </li>
                     <!--empregador-->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#"
-                         onclick="dropdownMenu(this);">
+                        <a class="nav-link dropdown-toggle" href="#">
                             <p>Buscar</p>
                         </a>
 
-                        <div class="dropdown-menu" style="display:none;">
+                        <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">
                                 <p>Buscar Vagas</p>
                             </a>
@@ -70,12 +68,11 @@
                     <?php } else {?>
                                 <?php if (getAccessLevel() == WORKER_USER) { ?>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#"
-                                        onclick="dropdownMenu(this);">
+                                        <a class="nav-link dropdown-toggle" href="#">
                                             <p><?php echo getName();?></p>
                                         </a>
 
-                                        <div class="dropdown-menu" style="display:none;">
+                                        <div class="dropdown-menu">
                                             <a class="dropdown-item" href="<?php echo ROOT . '/'. BEA_PROFILE . '/' . 
                                                                                     WORKER_USER; ?>"
                                             onclick="navInfo(this, '<?php echo ROOT . '/'. BEA_PROFILE . '/' . 

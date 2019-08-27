@@ -174,12 +174,13 @@ ul, ol, dl {
 .links .dropdown-menu {
     position: static;
     float: none;
+    display: none;
 }
 
 .dropdown-menu {
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 30px;
+    left: -25px;
     z-index: 100;
     /*display: none;*/
     float: left;
@@ -194,6 +195,12 @@ ul, ol, dl {
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: .25rem;
+}
+
+.links .dropdown:hover .dropdown-menu,
+.links .dropdown.over .dropdown-menu,
+.links .dropdown .dropdown-menu.over ul  {
+    display: block;
 }
 
 .dropdown-menu.show {
@@ -750,6 +757,19 @@ h1, h2, .elem {
 #left-nav .ul-top {
     margin-top: 20px;
     margin-left: 10px;
+}
+
+#left-nav .nav-link {
+    padding: 0;
+    opacity: .65;
+}
+
+#left-nav li p {
+    font-size: .8em !important;
+}
+
+#left-nav .nav-link:hover {
+    opacity: 1;
 }
 
 .li-top {
