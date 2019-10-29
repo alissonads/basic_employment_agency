@@ -14,7 +14,7 @@
 
         private function workersData() {
             $result = $this->db->query("SELECT c.date_birth, u.gender, 
-	                                           a.neighborhood, ct.name, ct.state
+	                                           a.neighborhood, ct.name as city_name, ct.state
                                         FROM user AS u
                                         JOIN curriculum AS c
                                         ON u.user_id = c.user_id
@@ -118,7 +118,7 @@
                                         JOIN curriculum AS c
                                         ON c.curriculum_id = ec.curriculum_id
                                         WHERE c.user_id = '" . getUserId() . "'");
-            $data = array_merge($data, $result->fetch_assoc());
+            //$data = array_merge($data, $result->fetch_assoc());
 
             if ($result->num_rows > 0) {
                 $i = 0;

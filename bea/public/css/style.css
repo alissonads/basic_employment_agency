@@ -268,6 +268,9 @@ ul, ol, dl {
     display: flex;
     flex-direction: column;
     word-wrap: break-word;
+}
+
+.box, .box-op-register, .panel-info {
     background-color: #FFFFFF;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -345,6 +348,15 @@ ul, ol, dl {
 
 .panel-footer {
     padding: .5rem;
+}
+
+.panel-info {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.panel-info .data {
+    padding: 12px;
 }
 
 .close {
@@ -751,7 +763,11 @@ h1, h2, .elem {
 }
 
 #left-nav {
-    width: inherit;
+    background-color: #FFFFFF;
+}
+
+#left-nav.size-nav  {
+    width: 80%;
 }
 
 #left-nav .ul-top {
@@ -851,6 +867,9 @@ h1, h2, .elem {
     }
     .width-50 {
         width: 50%;
+    }
+    #left-nav.size-nav {
+        width: 15%;
     }
 }
 

@@ -17,7 +17,7 @@
                 <div class="left-col col-md-4">
                     <div id="left-nav" class="fixed">
                         <!--foto de perfil-->
-                        <div style="border:1px solid; width:15%; height:180px;">
+                        <div style="border:1px solid; width:15%; height:180px; width:inherit;">
 
                         </div>
                         <!--links-->

@@ -24,6 +24,10 @@
             echo '<pre>';
             print_r($this->response);
             echo '</pre>';*/
+            self::profileWorker($this->response, getUser());
+        }
+
+        private function profileWorker($response, $user) {
             require_once 'util/profile/profile.php';
         }
     }
